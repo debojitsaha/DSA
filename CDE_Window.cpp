@@ -20,6 +20,7 @@ int main()
             M[A[i-k]]--;
         M[A[i]]++;
         cout<<"CDE= "<<M.size()<<endl;
+        
     }
     return 0;
 }
