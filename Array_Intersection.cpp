@@ -8,16 +8,15 @@ int main()
     unordered_set<int>H;
     for(int i=0;i<6;i++)
         H.insert(A[i]);
+    int c=0;
     for(int i=0;i<8;i++)
     {
         if(H.find(B[i])!=H.end())
+        {
+            c++;
             H.erase(B[i]);
-        else    
-            H.insert(B[i]);
+        }        
     }
-    cout<<"Intersected Array: ";
-    for(auto& i:H)
-        cout<<i<<" ";
-    cout<<endl;
+    cout<<"Distinct Array Elements: "<<c<<endl;
     return 0;
 }
