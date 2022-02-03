@@ -27,6 +27,37 @@ void insert(node* &head, int val, int pos)
     t->next=n;    
 }
 
+void deletion(node* &head, int pos)
+{
+    if(pos==0)
+    {
+        head= head->next;
+        return;        
+    }
+    node* t=head;
+    for(int i=0;i<pos-1;i++)
+        t=t->next;
+    node* del=t->next;
+    t->next=t->next->next;
+    delete del;
+}
+
+void reverse(node* &head)
+{
+    node* prevptr=NULL;
+    node* currptr=head;
+    node* nextptr;
+    while(currptr!=NULL)
+    {
+        nextptr= currptr->next;
+        currptr->next=prevptr;
+
+        prevptr=currptr;
+        currptr=nextptr;        
+    }
+    head=prevptr;
+}
+
 void display(node* head)
 {
     node* t=head;
@@ -39,7 +70,7 @@ void display(node* head)
 }
 
 int main()
-{
+{    
     node* n1= new node(5);
     node* n2= new node(10);
     node* n3= new node(15);
@@ -55,6 +86,10 @@ int main()
     n6->next=NULL;
     display(head);
     insert(head,22,4);
+    display(head);
+    deletion(head,4);
+    display(head);
+    reverse(head);
     display(head);
     return 0;    
 }
