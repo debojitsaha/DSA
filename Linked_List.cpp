@@ -70,7 +70,7 @@ void display(node* head)
 }
 
 int main()
-{
+{    
     node* n1= new node(5);
     node* n2= new node(10);
     node* n3= new node(15);
