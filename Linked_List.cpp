@@ -27,6 +27,21 @@ void insert(node* &head, int val, int pos)
     t->next=n;    
 }
 
+void deletion(node* &head, int pos)
+{
+    if(pos==0)
+    {
+        head= head->next;
+        return;        
+    }
+    node* t=head;
+    for(int i=0;i<pos-1;i++)
+        t=t->next;
+    node* del=t->next;
+    t->next=t->next->next;
+    delete del;
+}
+
 void display(node* head)
 {
     node* t=head;
@@ -55,6 +70,8 @@ int main()
     n6->next=NULL;
     display(head);
     insert(head,22,4);
+    display(head);
+    deletion(head,4);
     display(head);
     return 0;    
 }
