@@ -2,10 +2,12 @@
 #include<stack>
 using namespace std;
 
+int y=3;
+
 int precedence(char c)
 {
     if(c=='^')
-        return 3;
+        return y++;
     if(c=='*' || c=='/')
         return 2;
     if(c=='+' || c=='-')
@@ -57,7 +59,7 @@ string convert(string s)
 
 int main()
 {
-    string s="(a-b/c)*(a/k-l)";
+    string s="a^b^c";
     cout<<convert(s)<<endl;
     return 0;
 }
