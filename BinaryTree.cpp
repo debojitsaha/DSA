@@ -78,6 +78,13 @@ int size(struct Node* root)
     return size(root->left)+size(root->right)+1;
 }
 
+int nodeSum(struct Node* root)
+{
+    if(root==NULL)
+        return 0;
+    return nodeSum(root->left)+nodeSum(root->right)+root->data;
+}
+
 int maxNode(struct Node* root)
 {
     if(root==NULL)
@@ -104,6 +111,7 @@ int main()
     cout<<endl;
     cout<<"Height of Binary Tree= "<<height(root)<<endl;
     cout<<"Size of Binary Tree= "<<size(root)<<endl;
+    cout<<"Sum of Binary Tree= "<<nodeSum(root)<<endl;
     cout<<"Max value of Binary Tree= "<<maxNode(root)<<endl;
     cout<<"Min value of Binary Tree= "<<minNode(root)<<endl;
 
